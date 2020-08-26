@@ -1,7 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
   User: Seid
-  To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -37,13 +36,14 @@
                          src="https://scontent.fgyd12-1.fna.fbcdn.net/v/t1.0-9/117297018_2834947496739910_9092559191847014896_n.jpg?_nc_cat=103&_nc_sid=8024bb&_nc_ohc=mzSxlwPf_gwAX-BFP8I&_nc_ht=scontent.fgyd12-1.fna&oh=446ca32d589069031905d69964309ab4&oe=5F5E6DAB"/>
                 </div>
                 <div class="col-3">
-                    <h3 style="color: green">Uğurlu Gələcək ...</h3>
+                    <p class="font-italic"style="color: green">Uğurlu Gələcək ...</p>
                 </div>
             </div>
         </div>
     </div>
 </header>
 <br>
+<div class="w-100 p-5" style="background-color: green;"></div>
 <br>
 <div class="container">
     <div class="row justify-content-center">
@@ -61,7 +61,6 @@
             </a>
         </div>
     </div>
-
 </div>
 <br>
 <hr>
@@ -81,6 +80,7 @@
             </div>
         </div>
         <div class="col-sm-6">
+
             <div class="card" style="width: 30rem;">
                 <div class="card-body">
                     <h5 class="card-title">Java Developer</h5>
@@ -90,6 +90,7 @@
                     <a href="#" class="btn btn-success">Ətraflı</a>
                 </div>
             </div>
+
         </div>
     </div>
     <br>
@@ -144,5 +145,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>
