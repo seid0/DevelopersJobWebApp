@@ -2,48 +2,53 @@
   Created by IntelliJ IDEA.
   User: Seid
 --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/users.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="ico" type="image/png"
           href="https://scontent.fgyd12-1.fna.fbcdn.net/v/t1.0-9/cp0/117918152_2842377885996871_2181575525609601673_n.jpg?_nc_cat=111&_nc_sid=8024bb&_nc_ohc=ctALirYr9VAAX8zuw0v&_nc_ht=scontent.fgyd12-1.fna&oh=356b95e0060da24f76725509df883c50&oe=5F5E37F5">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
     <title>DevelpersJob</title>
 </head>
 <body>
 <br>
 <header class="full-header">
-
     <div class="container">
         <div class="col-md-12">
             <div class="row">
                 <div class="col-9">
-                    <img class="day-logo"
+                    <img  class="day-logo"
                          src="https://scontent.fgyd12-1.fna.fbcdn.net/v/t1.0-9/117297018_2834947496739910_9092559191847014896_n.jpg?_nc_cat=103&_nc_sid=8024bb&_nc_ohc=mzSxlwPf_gwAX-BFP8I&_nc_ht=scontent.fgyd12-1.fna&oh=446ca32d589069031905d69964309ab4&oe=5F5E6DAB"/>
                 </div>
                 <div class="col-3">
-                    <p class="font-italic"style="color: green">Uğurlu Gələcək ...</p>
+                    <p class="font-italic" style="color: green">Uğurlu Gələcək ...</p>
                 </div>
             </div>
         </div>
     </div>
 </header>
 <br>
-<div class="w-100 p-5" style="background-color: green;"></div>
+<%--<div class="container">--%>
+
+<div class="p-3 mb-2 bg-success text-white" ></div>
+<%--</div>--%>
 <br>
 <div class="container">
     <div class="row justify-content-center">
@@ -66,85 +71,27 @@
 <hr>
 <br>
 <div class="container">
-    <h3 style="color: green">Elanlar</h3>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card" style="width: 30rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Java Developer</h5>
-                    <h6 class="card-title">Idrak MMC</h6>
-                    <p class="card-text">Maaş: 1200-1500</p>
+    <h3 class="text-success">Elanlar</h3>
 
-                    <a href="#" class="btn btn-success">Ətraflı</a>
+<div class="row">
+    <c:forEach items="${home}" var="v">
+        <div class="col-md-6">
+            <div >
+                <div class="card" style="margin-top: 30px; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);">
+                    <h5 class="card-header text-success" >Elan Nömrəsi: ${v.id}</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">${v.jobName}</h5>
+                        <p class="card-text">Maaş: ${v.salary}</p>
+                        <a href="#" class="btn btn-success">Ətraflı</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
-
-            <div class="card" style="width: 30rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Java Developer</h5>
-                    <h6 class="card-title">Idrak MMC</h6>
-                    <p class="card-text">Maaş: 1200-1500</p>
-
-                    <a href="#" class="btn btn-success">Ətraflı</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card" style="width: 30rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Java Developer</h5>
-                    <h6 class="card-title">Idrak MMC</h6>
-                    <p class="card-text">Maaş: 1200-1500</p>
-
-                    <a href="#" class="btn btn-success">Ətraflı</a>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-sm-6">
-            <div class="card" style="width: 30rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Java Developer</h5>
-                    <h6 class="card-title">Idrak MMC</h6>
-                    <p class="card-text">Maaş: 1200-1500</p>
-
-                    <a href="#" class="btn btn-success">Ətraflı</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card" style="width: 30rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Java Developer</h5>
-                    <h6 class="card-title">Idrak MMC</h6>
-                    <p class="card-text">Maaş: 1200-1500</p>
-
-                    <a href="#" class="btn btn-success">Ətraflı</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card" style="width: 30rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Java Developer</h5>
-                    <h6 class="card-title">Idrak MMC</h6>
-                    <p class="card-text">Maaş: 1200-1500</p>
-
-                    <a href="#" class="btn btn-success">Ətraflı</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    </c:forEach>
 </div>
-
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>
